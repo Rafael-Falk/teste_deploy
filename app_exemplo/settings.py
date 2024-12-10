@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'produto',
     'django_extensions',
     'produto2',
-    'blog'
+    'blog',
 
 ]
 
