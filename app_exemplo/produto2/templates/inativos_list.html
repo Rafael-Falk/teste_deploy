@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos Inativos</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Produtos</h1>
+    <!-- Lista de produtos -->
+    <ul>
+        {% for produto in produtos %}
+            <li class="produto-container">
+                <span class="produto-info">
+                    {{ produto.nome }} - R$ {{ produto.preco }}
+                </span>
+                <div class="botao-container">
+                    <a href="{% url 'produto_reativo' produto.pk %}" class="btn-acao">reativar</a>
+                    <a href="{% url 'produto_edit' produto.pk %}" class="btn-acao">Editar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

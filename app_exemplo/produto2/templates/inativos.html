@@ -1,0 +1,23 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for produto2 in inativo %}
+            <li>{{ produto2 }}</li>
+            <form action = "{% url 'produto_reativo' produto.pk %}" method = "post">
+                {% csrf_token %}
+                <button type="submit">reativar</button>
+            <form>
+
+        {% endfor %}
+    </ul>
+</body>
+</html>
